@@ -1,4 +1,8 @@
 const form = document.getElementById('form-atividade');
+const imgAprovado = '<img src="aprovado.png" alt="Aprovado"/>';
+const imgReprovado = '<img src="reprovado.png" alt="Reprovado"/>';
+
+let linhas = '';
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -8,10 +12,14 @@ form.addEventListener('submit', function(e) {
     let linha = `<tr>`;
     linha += `<td>${inputNomeAtividade.value}</td>`;
     linha += `<td>${inputNotaAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value >= 7 ? 'Aprovado' : 'Reprovado'}</td>`;
+    linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`;
     linha += `</tr>`;
 
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linha;
+    linhas += linha;
 
+    const corpoTabela = document.querySelector('tbody');
+    corpoTabela.innerHTML = linhas;
+
+    inputNotaAtividade.value = '';
+    inputNomeAtividade.value = '';
 });
