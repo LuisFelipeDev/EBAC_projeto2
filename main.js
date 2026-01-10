@@ -1,6 +1,6 @@
 const form = document.getElementById('form-atividade');
-const imgAprovado = '<img src="aprovado.png" alt="Aprovado"/>';
-const imgReprovado = '<img src="reprovado.png" alt="Reprovado"/>';
+const imgAprovado = '<img src="./images/aprovado.png" alt="Aprovado"/>';
+const imgReprovado = '<img src="./images/reprovado.png" alt="Reprovado"/>';
 
 let linhas = '';
 form.addEventListener('submit', function(e) {
